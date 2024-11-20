@@ -5,5 +5,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://thanabodeesaepui.github.io/',
+  base: 'makusu-site',
   integrations: [tailwind()]
 });
