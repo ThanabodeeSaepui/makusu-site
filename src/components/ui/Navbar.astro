@@ -1,0 +1,51 @@
+---
+import Searchbar from "./Searchbar.astro";
+
+const NavbarMenu: Array<{ name: string; url: string }> = [
+  { name: "หน้าแรก", url: "/" },
+  { name: "เกี่ยวกับเรา", url: "/about" },
+  { name: "สินค้า", url: "/products" },
+  { name: "บทความ", url: "/blog" },
+  { name: "ติดต่อเรา", url: "/contact" },
+  { name: "สั่งซื้อ", url: "/shopping" },
+];
+---
+
+<nav class="border-gray-200 bg-secondary">
+  <div
+    class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4"
+  >
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/logo.svg" class="h-8" alt="Flowbite Logo" />
+      <span
+        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+        >Makusu</span
+      >
+    </a>
+    <div class="flex items-center space-x-6 rtl:space-x-reverse">
+      <Searchbar />
+    </div>
+  </div>
+</nav>
+<nav class="bg-primary">
+  <div class="max-w-screen-xl px-4 py-3 mx-auto">
+    <div class="flex items-center">
+      <ul
+        class="flex flex-row font-medium m-auto space-x-8 rtl:space-x-reverse text-sm"
+      >
+        {
+          NavbarMenu.map((item) => (
+            <li>
+              <a
+                href={item.url}
+                class="text-gray-900 dark:text-white hover:text-green-500"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
