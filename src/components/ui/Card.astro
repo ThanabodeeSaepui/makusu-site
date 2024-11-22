@@ -1,28 +1,24 @@
 ---
 interface Props {
-	productName: string;
-	detail: string;
-	imageUrl: string;
+  productName: string;
+  detail: string;
+  imageUrl: string;
 }
 
 const { productName, detail, imageUrl } = Astro.props;
 ---
 
-<div class="card bg-base-100 w-96 shadow-xl">
-  <figure>
-    <img
-      src={imageUrl}
-      alt="Shoes" />
+<div class="card bg-base-100 w-full shadow-xl">
+  <figure class="w-full aspect-square overflow-hidden">
+    <img src={imageUrl} alt={productName} class="w-full h-full object-cover" />
   </figure>
   <div class="card-body">
     <h2 class="card-title">
       {productName}
-      <!-- <div class="badge badge-secondary">NEW</div> -->
     </h2>
     <p>{detail}</p>
     <div class="card-actions justify-end">
       <div class="badge badge-outline">สกรู</div>
-      <!-- <div class="badge badge-outline">Products</div> -->
     </div>
     <div class="card-actions justify-end">
       <button class="btn btn-primary">Buy Now</button>
