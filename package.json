@@ -21,7 +21,9 @@
     "typescript": "^5.6.3"
   },
   "trustedDependencies": [
-    "@biomejs/biome"
+    "@biomejs/biome",
+    "esbuild",
+    "sharp"
   ],
   "devDependencies": {
     "daisyui": "^4.12.14"
