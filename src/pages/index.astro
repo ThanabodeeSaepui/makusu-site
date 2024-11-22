@@ -2,12 +2,45 @@
 import Hero from "../components/ui/Hero.astro";
 import Divider from "../components/ui/Divider.astro";
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/ui/Card.astro";
 
+// Product data
+const products = [
+  {
+    productName: "สกรูยึดหลังคาเมทัลชีทสันลอนปลายสว่าน",
+    detail: "สกรูยึดหลังคาเมทัลชีทสันลอนปลายสว่าน สกรูหลังคาเหล็กสันลอนปลายสว่านมีให้เลือก 11 ขนาด",
+    imageUrl: "https://cx.lnwfile.com/_/cx/_raw/na/xx/mj.jpg"
+  },
+  {
+    productName: "สกรูเมทัลชีทยึดท้องลอนปลายสว่าน",
+    detail: "สกรูเมทัลชีทยึดท้องลอนปลายสว่าน สำหรับหลังคาเมทัลชีท สกรูปลายสว่าน มีให้เลือก 6 ขนาด",
+    imageUrl: "https://cx.lnwfile.com/_/cx/_raw/a5/j3/h9.jpg"
+  },
+  {
+    productName: "สกรูยึดหลังคาเมทัลชีทท้องลอนปลายผ่า ",
+    detail: "สกรูยึดหลังคาเมทัลชีทท้องลอนปลายผ่า แปไม้ ปลายแหลม มีให้เลือก 3 ขนาด",
+    imageUrl: "https://cx.lnwfile.com/_/cx/_raw/z6/qr/if.jpg"
+  },
+  {
+    productName: "สกรูเมทัลชีทยึดสันลอนปลายผ่า",
+    detail: "สกรูเมทัลชีทยึดสันลอนปลายผ่า แปไม้ สำหรับโครงหลังคาแปไม้ มีให้เลือก 5 ขนาด",
+    imageUrl: "https://cx.lnwfile.com/_/cx/_raw/dc/5p/hp.jpg"
+  }
+];
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Makusu | Homepage.">
 	<main>
 		<Hero />
 		<Divider />
+		<div class="flex justify-center">
+			{products.map(product => (
+				<Card
+					productName={product.productName}
+					detail={product.detail}
+					imageUrl={product.imageUrl}
+				/>
+			))}
+		</div>
 	</main>
 </Layout>
