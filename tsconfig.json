@@ -8,5 +8,10 @@
     },
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
-  }
+  },
+  "include": [
+    "./src/**/*.d.ts",
+    "./src/**/*.ts",
+    "./src/**/*.astro"
+  ]
 }
