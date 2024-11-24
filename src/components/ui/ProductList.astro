@@ -1,0 +1,47 @@
+---
+import Card from "./Card.astro";
+
+const products: { productName: string; detail: string; imageUrl: string }[] = [
+	{
+		productName: "สกรูยึดหลังคาเมทัลชีทสันลอนปลายสว่าน",
+		detail:
+			"สกรูยึดหลังคาเมทัลชีทสันลอนปลายสว่าน สกรูหลังคาเหล็กสันลอนปลายสว่านมีให้เลือก 11 ขนาด",
+		imageUrl: "https://cx.lnwfile.com/_/cx/_raw/na/xx/mj.jpg",
+	},
+	{
+		productName: "สกรูเมทัลชีทยึดท้องลอนปลายสว่าน",
+		detail:
+			"สกรูเมทัลชีทยึดท้องลอนปลายสว่าน สำหรับหลังคาเมทัลชีท สกรูปลายสว่าน มีให้เลือก 6 ขนาด",
+		imageUrl: "https://cx.lnwfile.com/_/cx/_raw/a5/j3/h9.jpg",
+	},
+	{
+		productName: "สกรูยึดหลังคาเมทัลชีทท้องลอนปลายผ่า ",
+		detail: "สกรูยึดหลังคาเมทัลชีทท้องลอนปลายผ่า แปไม้ ปลายแหลม มีให้เลือก 3 ขนาด",
+		imageUrl: "https://cx.lnwfile.com/_/cx/_raw/z6/qr/if.jpg",
+	},
+	{
+		productName: "สกรูเมทัลชีทยึดสันลอนปลายผ่า",
+		detail: "สกรูเมทัลชีทยึดสันลอนปลายผ่า แปไม้ สำหรับโครงหลังคาแปไม้ มีให้เลือก 5 ขนาด",
+		imageUrl: "https://cx.lnwfile.com/_/cx/_raw/dc/5p/hp.jpg",
+	},
+];
+---
+
+<div class="w-full flex justify-center">
+  <div class="w-full max-w-7xl overflow-x-auto">
+    <h1 class="font-bold text-3xl">Most popular products</h1>
+    <div class="flex space-x-4 p-4">
+      {
+        products.map((product) => (
+          <div class="flex-none w-64 sm:w-72 md:w-80">
+            <Card
+              productName={product.productName}
+              detail={product.detail}
+              imageUrl={product.imageUrl}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
