@@ -6,7 +6,6 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "deploy": "astro build && wrangler deploy",
     "preview": "astro preview",
     "astro": "astro",
     "format": "bunx --bun @biomejs/biome format --write ./src",
@@ -30,7 +29,6 @@
     "sharp"
   ],
   "devDependencies": {
-    "daisyui": "^4.12.14",
-    "wrangler": "4.7.0"
+    "daisyui": "^4.12.14"
   }
 }
