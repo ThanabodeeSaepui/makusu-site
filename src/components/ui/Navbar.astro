@@ -15,7 +15,7 @@ const NavbarMenu: Array<{ name: string; url: string }> = [
 
 <nav class="border-gray-200 bg-secondary">
   <div
-    class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4"
+    class="flex flex-wrap justify-between items-center mx-auto max-w-(--breakpoint-xl) p-4"
   >
     <a href="/makusu-site" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="/makusu-site/logo.svg" class="h-8" alt="Flowbite Logo" />
@@ -30,7 +30,7 @@ const NavbarMenu: Array<{ name: string; url: string }> = [
   </div>
 </nav>
 <nav class="bg-primary">
-  <div class="max-w-screen-xl px-4 py-3 mx-auto">
+  <div class="max-w-(--breakpoint-xl) px-4 py-3 mx-auto">
     <div class="flex items-center">
       <ul
         class="flex flex-row font-medium m-auto space-x-8 rtl:space-x-reverse text-sm"
