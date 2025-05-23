@@ -1,0 +1,25 @@
+---
+import Card from "../../components/ui/Card.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const products = await getCollection("product");
+---
+
+<Layout title="Makusu | Product">
+  <div class="w-full flex justify-center">
+    <div class="flex space-x-4 p-4">
+      {
+        products.map(({ data }) => (
+          <div class="flex-none w-64 sm:w-72 md:w-80">
+            <Card
+              productName={data.name}
+              detail={data.description}
+              imageUrl={data.image}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
