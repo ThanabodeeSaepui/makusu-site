@@ -1,15 +1,13 @@
 ---
 import Searchbar from "./Searchbar.astro";
 
-const basePath = "/makusu-site";
-
 const NavbarMenu: Array<{ name: string; url: string }> = [
-	{ name: "หน้าแรก", url: `${basePath}/` },
-	{ name: "เกี่ยวกับเรา", url: `${basePath}/about` },
-	{ name: "สินค้า", url: `${basePath}/products` },
-	{ name: "บทความ", url: `${basePath}/blog` },
-	{ name: "ติดต่อเรา", url: `${basePath}/contact` },
-	{ name: "สั่งซื้อ", url: `${basePath}/shopping` },
+	{ name: "หน้าแรก", url: "/" },
+	{ name: "เกี่ยวกับเรา", url: "/about" },
+	{ name: "สินค้า", url: "/products" },
+	{ name: "บทความ", url: "/blog" },
+	{ name: "ติดต่อเรา", url: "/contact" },
+	{ name: "สั่งซื้อ", url: "/shopping" },
 ];
 ---
 
@@ -17,8 +15,8 @@ const NavbarMenu: Array<{ name: string; url: string }> = [
   <div
     class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4"
   >
-    <a href="/makusu-site" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="/makusu-site/logo.svg" class="h-8" alt="Flowbite Logo" />
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="logo.svg" class="h-8" alt="Flowbite Logo" />
       <span
         class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
         >Premium Screw</span
