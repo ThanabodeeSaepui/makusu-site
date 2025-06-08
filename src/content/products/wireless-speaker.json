@@ -1,0 +1,9 @@
+{
+  "name": "Premium Wireless Speaker",
+  "price": 199.99,
+  "image": "https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "description": "High-fidelity wireless speaker with deep bass",
+  "featured": false,
+  "category": "audio",
+  "tags": ["speaker", "wireless", "bluetooth", "premium-audio"]
+}

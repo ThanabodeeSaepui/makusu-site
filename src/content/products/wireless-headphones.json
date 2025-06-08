@@ -1,0 +1,9 @@
+{
+  "name": "Premium Wireless Headphones",
+  "price": 199.99,
+  "image": "https://images.pexels.com/photos/3945667/pexels-photo-3945667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "description": "High-quality wireless headphones with noise cancellation",
+  "featured": true,
+  "category": "audio",
+  "tags": ["wireless", "noise-cancelling", "premium", "bluetooth"]
+}

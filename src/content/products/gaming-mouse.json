@@ -1,0 +1,9 @@
+{
+  "name": "Pro Gaming Mouse",
+  "price": 79.99,
+  "image": "https://images.pexels.com/photos/2115257/pexels-photo-2115257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "description": "High-precision gaming mouse with programmable buttons",
+  "featured": false,
+  "category": "accessories",
+  "tags": ["gaming", "mouse", "rgb", "programmable"]
+}

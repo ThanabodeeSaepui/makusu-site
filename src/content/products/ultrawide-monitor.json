@@ -1,0 +1,9 @@
+{
+  "name": "34\" Ultrawide Monitor",
+  "price": 599.99,
+  "image": "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "description": "34-inch curved ultrawide gaming monitor",
+  "featured": false,
+  "category": "monitors",
+  "tags": ["ultrawide", "gaming", "curved", "monitor"]
+}

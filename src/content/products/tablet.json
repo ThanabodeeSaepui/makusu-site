@@ -1,0 +1,9 @@
+{
+  "name": "Pro Tablet",
+  "price": 799.99,
+  "image": "https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "description": "Professional tablet with stylus support",
+  "featured": false,
+  "category": "tablets",
+  "tags": ["tablet", "stylus", "professional", "portable"]
+}
