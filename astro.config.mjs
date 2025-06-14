@@ -7,4 +7,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  image: {
+    domains: [
+      "cx.lnwfile.com",
+      "static.wixstatic.com"
+    ],
+  },
+  experimental: {
+    responsiveImages: true,
+  },
 });

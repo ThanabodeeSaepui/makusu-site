@@ -1,9 +1,0 @@
-{
-  "name": "4K Action Camera",
-  "price": 249.99,
-  "image": "https://images.pexels.com/photos/1787236/pexels-photo-1787236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "description": "Professional-grade 4K action camera",
-  "featured": true,
-  "category": "cameras",
-  "tags": ["4k", "waterproof", "action-camera", "professional"]
-}

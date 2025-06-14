@@ -1,9 +1,0 @@
-{
-  "name": "Smart Watch Series X",
-  "price": 299.99,
-  "image": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "description": "Advanced smartwatch with health tracking features",
-  "featured": true,
-  "category": "wearables",
-  "tags": ["smart-watch", "fitness", "health-tracking", "touchscreen"]
-}
