@@ -10,7 +10,8 @@ export default defineConfig({
   image: {
     domains: [
       "cx.lnwfile.com",
-      "static.wixstatic.com"
+      "static.wixstatic.com",
+      "storage.googleapis.com"
     ],
   },
   experimental: {
