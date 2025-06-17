@@ -8,7 +8,7 @@ const featuredPosts = posts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 <div class="w-full max-w-7xl mx-auto px-4 py-12">
-  <h2 class="text-2xl font-bold mb-6">Featured Blog Posts</h2>
+  <h2 class="text-2xl font-bold mb-6">บล็อก</h2>
   <div class="carousel-container">
     <div class="carousel" id="blogCarousel">
       {featuredPosts.map(post => (
@@ -52,60 +52,67 @@ const featuredPosts = posts
 <style>
   .carousel-container {
     position: relative;
-    width: 100%;
     overflow: hidden;
-    padding: 0 40px;
   }
 
   .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 20px;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+    
+    /* Hide scrollbar for WebKit browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 
   .carousel-item {
-    flex: 0 0 calc(33.333% - 14px);
-    min-width: calc(33.333% - 14px);
+    flex: 0 0 320px; /* Fixed width, no grow/shrink */
+    min-width: 320px;
   }
 
-  @media (max-width: 1024px) {
+  /* Optional: Show scrollbar on hover for better UX */
+  .carousel-container:hover .carousel {
+    scrollbar-width: thin;
+    -ms-overflow-style: auto;
+  }
+  
+  .carousel-container:hover .carousel::-webkit-scrollbar {
+    display: block;
+    height: 8px;
+  }
+  
+  .carousel-container:hover .carousel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .carousel-container:hover .carousel::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  
+  .carousel-container:hover .carousel::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
     .carousel-item {
-      flex: 0 0 calc(50% - 10px);
-      min-width: calc(50% - 10px);
+      flex: 0 0 280px;
+      min-width: 280px;
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 480px) {
     .carousel-item {
-      flex: 0 0 100%;
-      min-width: 100%;
+      flex: 0 0 250px;
+      min-width: 250px;
     }
-  }
-
-  .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    transition: background-color 0.3s;
-  }
-
-  .carousel-button:hover {
-    background: rgba(0, 0, 0, 0.7);
-  }
-
-  .carousel-button.prev {
-    left: 0;
-  }
-
-  .carousel-button.next {
-    right: 0;
   }
 </style>

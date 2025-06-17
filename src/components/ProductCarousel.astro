@@ -8,104 +8,82 @@ const products = await getCollection("products", ({ data }) => {
 ---
 
 <div class="w-full max-w-7xl mx-auto px-4 py-8">
-  <h2 class="text-2xl font-bold mb-6">Featured Products</h2>
-  <div class="carousel-container">
-    <div class="carousel" id="productCarousel">
-      {
-        products.map((product) => (
-          <div class="carousel-item">
-            <a
-              href={`/products/${product.id}`}
-              class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <Image
-                inferSize={true}
-                src={product.data.image}
-                alt={product.data.name}
-                class="w-full h-64 object-cover"
-              />
-              <div class="p-4">
-                <h3 class="text-lg font-semibold">{product.data.name}</h3>
-                <p class="text-gray-600">${product.data.price}</p>
-                <p class="text-gray-500 text-sm mb-2">
-                  {product.data.description}
-                </p>
-                <div class="flex flex-wrap gap-2 mb-3">
-                  {product.data.tags.map((tag) => (
-                    <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
-                      {tag}
-                    </span>
-                  ))}
+  <h2 class="text-2xl font-bold mb-6">สินค้าแนะนำ</h2>
+  <div class="carousel-container relative">
+    <div class="carousel overflow-x-auto scrollbar-hide pb-4" id="productCarousel">
+      <div class="flex gap-4 w-max">
+        {
+          products.map((product) => (
+            <div class="carousel-item flex-shrink-0 w-80">
+              <a
+                href={`/products/${product.id}`}
+                class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow h-full"
+              >
+                <Image
+                  inferSize={true}
+                  src={product.data.image}
+                  alt={product.data.name}
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-4">
+                  <h3 class="text-lg font-semibold">{product.data.name}</h3>
+                  <p class="text-gray-600">${product.data.price}</p>
+                  <p class="text-gray-500 text-sm mb-2">
+                    {product.data.description}
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    {product.data.tags.map((tag) => (
+                      <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <button class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                    ดูข้อมูล
+                  </button>
                 </div>
-                <button class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                  ดูข้อมูล
-                </button>
-              </div>
-            </a>
-          </div>
-        ))
-      }
+              </a>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </div>
 
 <style>
-  .carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding: 0 40px;
-  }
-
   .carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 20px;
+    scroll-behavior: smooth;
   }
-
-  .carousel-item {
-    flex: 0 0 calc(33.333% - 14px);
-    min-width: calc(33.333% - 14px);
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-
-  @media (max-width: 1024px) {
-    .carousel-item {
-      flex: 0 0 calc(50% - 10px);
-      min-width: calc(50% - 10px);
-    }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
-
-  @media (max-width: 640px) {
-    .carousel-item {
-      flex: 0 0 100%;
-      min-width: 100%;
-    }
-  }
-
-  .carousel-button {
+  
+  /* Optional: Add subtle scroll indicators */
+  .carousel-container::before,
+  .carousel-container::after {
+    content: '';
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    width: 20px;
     z-index: 10;
-    transition: background-color 0.3s;
+    pointer-events: none;
   }
-
-  .carousel-button:hover {
-    background: rgba(0, 0, 0, 0.7);
-  }
-
-  .carousel-button.prev {
+  
+  .carousel-container::before {
     left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.8), transparent);
   }
-
-  .carousel-button.next {
+  
+  .carousel-container::after {
     right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
   }
 </style>
