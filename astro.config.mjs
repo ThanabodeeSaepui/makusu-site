@@ -11,13 +11,11 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   image: {
+    responsiveStyles: true,
     domains: [
       "cx.lnwfile.com",
       "static.wixstatic.com",
       "storage.googleapis.com"
     ],
-  },
-  experimental: {
-    responsiveImages: true,
-  },
+  }
 });
